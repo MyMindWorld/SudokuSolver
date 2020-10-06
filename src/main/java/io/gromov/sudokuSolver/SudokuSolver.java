@@ -59,7 +59,7 @@ public class SudokuSolver {
         }
 
 
-        Integer boxSums[][] = new Integer[3][3];
+        Integer[][] boxSums = new Integer[3][3];
         for (int horizontalIterator = 0; board.length > horizontalIterator; horizontalIterator += 1) {
             for (int verticalIterator = 0; board.length > verticalIterator; verticalIterator += 1) {
                 if (boxSums[horizontalIterator / 3][verticalIterator / 3] == null) {
@@ -76,10 +76,7 @@ public class SudokuSolver {
         log.info("Vertically valid : " + verticallyValid);
         log.info("Grid's valid : " + gridValid);
 
-        if (!horizontallyValid || !gridValid) {
-            return false;
-        }
-        return true;
+        return horizontallyValid && gridValid;
     }
 
     public void printMatrix(Integer[][] matrix) {
