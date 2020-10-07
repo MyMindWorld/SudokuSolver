@@ -6,10 +6,10 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 
 @SpringBootApplication
-public class Entrypoint extends SpringBootServletInitializer {
+public class SudokuSolver extends SpringBootServletInitializer {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Entrypoint.class, args);
+        SpringApplication.run(SudokuSolver.class, args);
     }
 
 }
