@@ -87,25 +87,22 @@ public class ValidityChecker {
 
         Boolean gridSumsValid = isBoardGridsSumsValid(board);
 
-
-        log.info("Rows valid : " + rowValid);
-        log.info("Columns valid : " + columnValid);
-        log.info("Grid's valid : " + gridValid);
-
         return columnValid && rowValid && gridValid && numbersValid && gridSumsValid;
     }
 
     public boolean isBoardSolved(Integer[][] board) {
+        return isBoardInCorrectState(board) & isBoardGridSolved(board);
+    }
+
+    public boolean isBoardGridSolved(Integer[][] board) {
         Integer[][] boxSums = getBoxSums(board);
         for (int row = 0; row < boxSums.length; row++) {
             for (int col = 0; col < boxSums[row].length; col++) {
                 if (boxSums[col][row] != blockSum) {
-                    log.info("Board is not solved!");
                     return false;
                 }
             }
         }
-        log.info("Board is solved!");
         return true;
     }
 

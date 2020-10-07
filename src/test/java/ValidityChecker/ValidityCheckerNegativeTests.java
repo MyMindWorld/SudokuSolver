@@ -53,6 +53,11 @@ public class ValidityCheckerNegativeTests extends AbstractTestNGSpringContextTes
 
     @Test
     public void unsolvedBoardNotPassingSolvedCheck() {
+        Assert.assertFalse(validityChecker.isBoardSolved(testBoards.incorrectlyGridSolvedBoard));
+    }
+
+    @Test
+    public void incorrectlySolvedBoardNotPassingSolvedCheck() {
         Assert.assertFalse(validityChecker.isBoardSolved(testBoards.completelyInvalidBoard));
     }
 }
